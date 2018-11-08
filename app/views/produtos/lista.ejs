@@ -1,0 +1,21 @@
+<html>
+	<body>
+		<h1>Catálogo de livros da Casa do Código</h1>
+		<table border="1px">
+			<tr>
+				<th>#</th>
+				<th>Nome do Produto</th>
+				<th>Descrição</th>
+				<th>Preço</th>
+			</tr>
+			<%for(var i=0; i<lista.length; i++){%>
+				<tr>
+					<td><%= lista[i].id %></td>
+					<td><%= lista[i].titulo %></td>
+					<td><%= lista[i].descricao %></td>
+					<td>R$<%= lista[i].preco %></td>
+				</tr>
+			<% } %>
+		</table>
+	</body>
+</html>

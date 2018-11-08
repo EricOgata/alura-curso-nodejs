@@ -1,0 +1,32 @@
+<html>
+	<body>
+		<h1>Cadastrar novo Livro</h1>
+
+		<div class="erros">
+			<% if(errosValidacao){ %>
+				<ul>
+					<% for(var i = 0; i < errosValidacao.length; i++){%>
+						<li><%= errosValidacao[i].param %> - <%= errosValidacao[i].msg %></li>
+					<% } %>
+				</ul>
+			<% } %>
+		</div>		
+		<form action="/produtos" method="post">
+			<div>
+				<label for="titulo" >Título</label>
+				<input type="text" id="titulo" name="titulo" placeholder="Título do Livro" value="<%=produto.titulo%>">
+			</div>
+			<div>
+				<label for="preco" >Preço</label>
+				<input type="text" id="preco" name="preco" placeholder="Ex. R$29.90" value="<%=produto.preco%>">
+			</div>
+			<div>
+				<label for="descricao" >Descricao</label>
+				<br>
+				<textarea cols="20" rows="10" id="descricao" name="descricao" placeholder="Descrição do Livro"><%=produto.descricao%></textarea>
+			</div>
+
+			<input type="submit" value="gravar"/>
+		</form>
+	</body>
+</html>
