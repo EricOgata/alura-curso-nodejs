@@ -6,6 +6,10 @@ var expressValidator = require('express-validator');
 module.exports = function(){
 	console.log("Importou módulo express.js");	
 	var app = express();
+
+	// Middle-ware para recursos estáticos;
+	app.use(express.static('./app/public'));
+
 	app.set('view engine', 'ejs');
 	app.set('views','./app/views');
 
